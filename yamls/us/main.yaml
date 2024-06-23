@@ -11,7 +11,7 @@
     start: 0x1000
     vram: 0x8003AD80
     subsegments:
-      - [0x1000, hasm]
+      - [0x1000, hasm, entrypoint]
 
   - name: main
     type: code
