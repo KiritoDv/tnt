@@ -16,7 +16,7 @@ RECOMP_DIR := ido-recomp/$(DETECTED_OS)
 
 default: all
 
-all: recomp lzo1x torch
+all: recomp lzo1x
 
 clean:
 	$(RM) -rf $(RECOMP_DIR)
@@ -39,4 +39,4 @@ torch:
 	@echo "Building torch..."
 	$(MAKE) -C Torch type=release -j$(N_THREADS)
 
-.PHONY: all clean distclean default
+.PHONY: all clean distclean default torch
