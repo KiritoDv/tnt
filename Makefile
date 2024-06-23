@@ -50,7 +50,6 @@ VERSION ?= us
 REV ?= rev1
 
 BASEROM              := baserom.$(VERSION).z64
-BASEROM_UNCOMPRESSED := baserom.$(VERSION).uncompressed.z64
 TARGET               := tnt
 
 ### Output ###
@@ -58,8 +57,7 @@ TARGET               := tnt
 BUILD_DIR := build
 TOOLS	  := tools
 PYTHON	  := python3
-ROM       := $(BUILD_DIR)/$(TARGET).$(VERSION).uncompressed.z64
-ROMC 	  := $(BUILD_DIR)/$(TARGET).$(VERSION).z64
+ROM       := $(BUILD_DIR)/$(TARGET).$(VERSION).z64
 ELF       := $(BUILD_DIR)/$(TARGET).$(VERSION).elf
 LD_MAP    := $(BUILD_DIR)/$(TARGET).$(VERSION).map
 LD_SCRIPT := linker_scripts/$(VERSION)/$(TARGET).ld
@@ -201,7 +199,7 @@ endif
 
 ### Compiler ###
 
-IDO              := $(TOOLS)/ido-recomp/$(DETECTED_OS)/cc
+IDO             := $(TOOLS)/ido-recomp/$(DETECTED_OS)/cc
 AS              := $(MIPS_BINUTILS_PREFIX)as
 LD              := $(MIPS_BINUTILS_PREFIX)ld
 OBJCOPY         := $(MIPS_BINUTILS_PREFIX)objcopy
@@ -404,7 +402,7 @@ else
 # build/src/libultra/libc/xldtob.o:    OPTFLAGS := -Os
 endif
 
-all: uncompressed
+all: finalrom
 
 toolchain:
 	@$(MAKE) -s -C $(TOOLS)
@@ -418,13 +416,13 @@ init:
 #	@$(MAKE) decompress
 	@$(MAKE) extract -j $(N_THREADS)
 #	@$(MAKE) assets -j $(N_THREADS)
-	@$(MAKE) uncompressed -j $(N_THREADS)
+	@$(MAKE) finalrom -j $(N_THREADS)
 #	@$(MAKE) compressed
 
 TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \_\    \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n\n
-uncompressed: $(ROM)
+finalrom: $(ROM)
 ifneq ($(COMPARE),0)
-	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
+#	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
 #	@$(PYTHON) $(COMPTOOL) -r $(ROM) .
 	@md5sum --status -c $(TARGET).$(VERSION).md5 && \
 	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64$(NO_COL): $(GREEN)OK$(NO_COL)\n$(YELLOW) $(TNT)" || \
@@ -433,25 +431,7 @@ ifneq ($(COMPARE),0)
 	@md5sum --status -c $(TARGET).$(VERSION).md5
 endif
 
-compressed: $(ROMC)
-ifeq ($(COMPARE),1)
-	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
-#	@$(PYTHON) $(COMPTOOL) -r $(ROMC) .
-	@md5sum --status -c $(TARGET).$(VERSION).md5 && \
-	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64$(NO_COL): $(GREEN)OK$(NO_COL)\n" || \
-	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64 $(RED)FAILED$(NO_COL)\n"
-	@md5sum --status -c $(TARGET).$(VERSION).md5
-endif
-
 #### Main Targets ###
-
-decompress: $(BASEROM)
-	@echo "Decompressing ROM..."
-#	@$(PYTHON) $(COMPTOOL) $(DECOMPRESS_OPT) -dse $(COMPTOOL_DIR) -m $(MIO0) $(BASEROM) $(BASEROM_UNCOMPRESSED)
-
-compress: $(BASEROM)
-	@echo "Compressing ROM..."
-	@$(PYTHON) $(COMPTOOL) $(COMPRESS_OPT) -c -m $(MIO0) $(ROM) $(ROMC)
 
 extract:
 	@$(RM) -r asm/$(VERSION) bin/$(VERSION)
@@ -462,12 +442,12 @@ extract:
 
 assets:
 	@echo "Extracting assets from ROM..."
-	@$(TORCH) code $(BASEROM_UNCOMPRESSED)
-	@$(TORCH) header $(BASEROM_UNCOMPRESSED)
-	@$(TORCH) modding export $(BASEROM_UNCOMPRESSED)
+	@$(TORCH) code $(BASEROM)
+	@$(TORCH) header $(BASEROM)
+	@$(TORCH) modding export $(BASEROM)
 
 mod:
-	@$(TORCH) modding import code $(BASEROM_UNCOMPRESSED)
+	@$(TORCH) modding import code $(BASEROM)
 
 clean:
 	rm -f torch.hash.yml
@@ -504,11 +484,6 @@ disasm:
 #### Various Recipes ####
 
 # Final ROM
-$(ROMC): $(BASEROM_UNCOMPRESSED)
-	$(call print,Compressing ROM...,$<,$@)
-	@$(PYTHON) $(COMPTOOL) -c -m $(MIO0) $(ROM) $(ROMC)
-
-# Uncompressed ROM
 $(ROM): $(ELF)
 	$(call print,ELF->ROM:,$<,$@)
 	$(V)$(OBJCOPY) -O binary $< $@
@@ -558,4 +533,4 @@ build/src/libultra/libc/ll.o: src/libultra/libc/ll.c
 # Print target for debugging
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 
-.PHONY: all uncompressed compressed clean init extract expected format checkformat decompress compress assets context disasm toolchain
+.PHONY: all finalrom clean init extract expected format checkformat assets context disasm toolchain

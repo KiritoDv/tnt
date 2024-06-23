@@ -237,7 +237,7 @@
       - [0x89400, asm]
       - [0x89590, asm]
       - [0x895E0, data]
-      - [0xA1604, rodata]
+      - [0xA15F0, rodata]
       - { start: 0xA8190, type: bss, vram: 0x800E1F10 }
 
   - type: bin
