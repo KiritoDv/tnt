@@ -39,4 +39,4 @@ torch:
 	@echo "Building torch..."
 	$(MAKE) -C Torch type=release -j$(N_THREADS)
 
-.PHONY: all clean distclean default torch
+.PHONY: all clean distclean default
