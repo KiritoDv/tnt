@@ -133,7 +133,9 @@
       - [0x7BA80, asm]
       - [0x7BCA0, asm]
       - [0x7BF70, asm]
-      - [0x7C3E0, asm]
+      # - [0x7C290, c, osCreateThread] # osCreateThread
+      - [0x7C3E0, c, osStartThread] # osStartThread
+      - [0x7C530, asm]
       - [0x7C5B0, asm]
       - [0x7C770, asm]
       - [0x7C7D0, asm]
@@ -187,6 +189,7 @@
       - [0x81800, asm]
       - [0x818E0, asm]
       - [0x81990, asm]
+      - [0x82350, asm]
       - [0x82580, asm]
       - [0x82600, asm]
       - [0x82830, asm]
