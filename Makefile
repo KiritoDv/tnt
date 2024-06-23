@@ -415,11 +415,11 @@ torch:
 
 init:
 	@$(MAKE) clean
-	@$(MAKE) decompress
+#	@$(MAKE) decompress
 	@$(MAKE) extract -j $(N_THREADS)
-	@$(MAKE) assets -j $(N_THREADS)
+#	@$(MAKE) assets -j $(N_THREADS)
 	@$(MAKE) uncompressed -j $(N_THREADS)
-	@$(MAKE) compressed
+#	@$(MAKE) compressed
 
 TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \_\    \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n
 uncompressed: $(ROM)
