@@ -114,7 +114,7 @@
       - [0x77340, asm, 77340]
       - [0x779F0, c, 779F0]
       - [0x78FE0, asm, 78FE0]
-      - [0x79300, asm]
+      - [0x79300, c, createmesgqueue]
       - [0x79330, asm]
       - [0x793A0, asm]
       - [0x796E0, asm]
