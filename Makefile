@@ -419,7 +419,7 @@ init:
 	@$(MAKE) finalrom -j $(N_THREADS)
 #	@$(MAKE) compressed
 
-TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \_\    \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n\n
+TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \__\   \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n\n
 finalrom: $(ROM)
 ifneq ($(COMPARE),0)
 #	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"

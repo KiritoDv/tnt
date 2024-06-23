@@ -1,6 +1,6 @@
-[![Discord Invitation](https://discordapp.com/api/guilds/1190102597521133700/widget.png?style=banner2 'Starfox 64')](https://discord.gg/tuwdmuTTqc)
+[![Discord Invitation](https://discordapp.com/api/guilds/1253909545466724373/widget.png?style=banner2 'The New Tetris - Decomp')](https://discord.gg/a4VmcwBCKM)
 
-# The New Tetris (US) REV 1.0
+# The New Tetris (US) 1.0
 
 This is a WIP **matching decompilation** of ***The New Tetris***. The purpose of the project is to recreate a source code base for the game from scratch, using information found inside the game along with static and/or dynamic analysis.
 
@@ -98,6 +98,11 @@ this make target will also build the ROM. If all goes well, a new ROM called "tn
 ```bash
 741a94eee093c4c8684e66b89f8685e8  build/tnt.us.z64
 ./build/tnt.us.z64: OK
+ ______   __   __    ______  
+/\__  _\ /\ \-.\ \  /\__  _\ 
+\/_/\ \/ \ \ \-.  \ \/_/\ \/ 
+   \ \_\  \ \_\ \__\   \ \_\ 
+    \/_/   \/_/ \/_/    \/_/   
 ```
 
 If you instead see the following:

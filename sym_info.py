@@ -17,7 +17,7 @@ def symInfoMain():
 
     args = parser.parse_args()
 
-    BUILTMAP = Path(f"build") / f"starfox64.us.map"
+    BUILTMAP = Path(f"build") / f"tnt.us.map"
 
     mapPath = BUILTMAP
     if args.use_expected:
