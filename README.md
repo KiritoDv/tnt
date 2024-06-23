@@ -1,6 +1,6 @@
 [![Discord Invitation](https://discordapp.com/api/guilds/1253909545466724373/widget.png?style=banner2 'The New Tetris - Decomp')](https://discord.gg/a4VmcwBCKM)
 
-# The New Tetris (US) REV 1.0
+# The New Tetris (US) 1.0
 
 This is a WIP **matching decompilation** of ***The New Tetris***. The purpose of the project is to recreate a source code base for the game from scratch, using information found inside the game along with static and/or dynamic analysis.
 
