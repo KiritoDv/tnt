@@ -421,13 +421,13 @@ init:
 	@$(MAKE) uncompressed -j $(N_THREADS)
 	@$(MAKE) compressed
 
-SF := ___  ___\n/ __||  _|\n\__ \|  _|\n|___/|_|\n
+TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \_\    \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n
 uncompressed: $(ROM)
 ifneq ($(COMPARE),0)
 	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
 #	@$(PYTHON) $(COMPTOOL) -r $(ROM) .
 	@md5sum --status -c $(TARGET).$(VERSION).md5 && \
-	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64$(NO_COL): $(GREEN)OK$(NO_COL)\n$(YELLOW) $(SF)" || \
+	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64$(NO_COL): $(GREEN)OK$(NO_COL)\n$(YELLOW) $(TNT)" || \
 	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64 $(RED)FAILED$(NO_COL)\n\
 	$(RED)CAN'T LET YOU DO THAT, STARFOX.$(NO_COL)\n"
 	@md5sum --status -c $(TARGET).$(VERSION).md5
