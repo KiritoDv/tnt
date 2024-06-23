@@ -425,29 +425,29 @@ SF := ___  ___\n/ __||  _|\n\__ \|  _|\n|___/|_|\n
 uncompressed: $(ROM)
 ifneq ($(COMPARE),0)
 	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
-	@$(PYTHON) $(COMPTOOL) -r $(ROM) .
-	@md5sum --status -c $(TARGET).$(VERSION).uncompressed.md5 && \
-	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).uncompressed.z64$(NO_COL): $(GREEN)OK$(NO_COL)\n$(YELLOW) $(SF)" || \
-	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).uncompressed.z64 $(RED)FAILED$(NO_COL)\n\
+#	@$(PYTHON) $(COMPTOOL) -r $(ROM) .
+	@md5sum --status -c $(TARGET).$(VERSION).md5 && \
+	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64$(NO_COL): $(GREEN)OK$(NO_COL)\n$(YELLOW) $(SF)" || \
+	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64 $(RED)FAILED$(NO_COL)\n\
 	$(RED)CAN'T LET YOU DO THAT, STARFOX.$(NO_COL)\n"
-	@md5sum --status -c $(TARGET).$(VERSION).uncompressed.md5
+	@md5sum --status -c $(TARGET).$(VERSION).md5
 endif
 
 compressed: $(ROMC)
 ifeq ($(COMPARE),1)
 	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
-	@$(PYTHON) $(COMPTOOL) -r $(ROMC) .
+#	@$(PYTHON) $(COMPTOOL) -r $(ROMC) .
 	@md5sum --status -c $(TARGET).$(VERSION).md5 && \
 	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64$(NO_COL): $(GREEN)OK$(NO_COL)\n" || \
 	$(PRINT) "$(BLUE)$(TARGET).$(VERSION).z64 $(RED)FAILED$(NO_COL)\n"
-	@md5sum --status -c $(TARGET).$(VERSION).uncompressed.md5
+	@md5sum --status -c $(TARGET).$(VERSION).md5
 endif
 
 #### Main Targets ###
 
 decompress: $(BASEROM)
 	@echo "Decompressing ROM..."
-	@$(PYTHON) $(COMPTOOL) $(DECOMPRESS_OPT) -dse $(COMPTOOL_DIR) -m $(MIO0) $(BASEROM) $(BASEROM_UNCOMPRESSED)
+#	@$(PYTHON) $(COMPTOOL) $(DECOMPRESS_OPT) -dse $(COMPTOOL_DIR) -m $(MIO0) $(BASEROM) $(BASEROM_UNCOMPRESSED)
 
 compress: $(BASEROM)
 	@echo "Compressing ROM..."
