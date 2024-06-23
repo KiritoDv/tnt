@@ -101,8 +101,8 @@ this make target will also build the ROM. If all goes well, a new ROM called "tn
  ______   __   __    ______  
 /\__  _\ /\ \-.\ \  /\__  _\ 
 \/_/\ \/ \ \ \-.  \ \/_/\ \/ 
-   \ \_\  \ \_\ \_\    \ \_\ 
-    \/_/   \/_/ \/_/    \/_/     
+   \ \_\  \ \_\ \__\   \ \_\ 
+    \/_/   \/_/ \/_/    \/_/   
 ```
 
 If you instead see the following:
