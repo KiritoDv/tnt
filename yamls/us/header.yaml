@@ -1,0 +1,64 @@
+name: Newtetris (North America)
+sha1: 83fff25e82181a6993f28c91b9eeb8430396838b
+options:
+  basename: tnt
+  target_path: baserom.us.z64
+  elf_path: build/tnt.elf
+  ld_script_path: linker_scripts/us/tnt.ld
+  base_path: .
+  compiler: IDO
+  find_file_boundaries: True
+  header_encoding: ASCII
+  platform: n64
+  undefined_funcs_auto_path: linker_scripts/us/auto/undefined_funcs_auto.ld
+  undefined_syms_auto_path: linker_scripts/us/auto/undefined_syms_auto.ld
+
+  symbol_addrs_path:
+    - linker_scripts/us/symbol_addrs.txt
+
+  asm_path: asm/us/
+  src_path: src
+  asset_path: bin/us/
+  
+  build_path: build
+
+  extensions_path: tools/splat_ext
+  mips_abi_float_regs: o32
+  create_asm_dependencies: True
+  #do_c_func_detection: True
+  o_as_suffix: True
+  gfx_ucode: f3dex2
+  mnemonic_ljust: 12
+  rom_address_padding: True
+  dump_symbols: True
+  include_macro_inc: False
+  libultra_symbols: False
+  hardware_regs: False
+
+  ld_dependencies: True
+
+  use_legacy_include_asm: False
+
+  asm_function_macro: glabel
+  asm_jtbl_label_macro: jlabel
+  asm_data_macro: dlabel
+
+  # section_order: [".text", ".data", ".rodata", ".bss"]
+  # auto_all_sections: [".data", ".rodata", ".bss"]
+
+  reloc_addrs_path:
+    - reloc_addrs.txt
+
+  # undefined_funcs_auto_path: undefined_funcs_auto.txt
+  # undefined_syms_auto_path: undefined_syms_auto.txt
+
+  disasm_unknown: True
+  # string_encoding: ASCII
+  # data_string_encoding: ASCII
+  rodata_string_guesser_level: 2
+  data_string_guesser_level: 2
+  # libultra_symbols: True
+  # hardware_regs: True
+  # gfx_ucode: # one of [f3d, f3db, f3dex, f3dexb, f3dex2]
+segments:
+
