@@ -114,6 +114,8 @@
       - [0x77340, asm]
       - [0x779F0, asm]
       - [0x78FE0, asm]
+
+      # LIBULTRA
       - [0x79300, asm]
       - [0x79330, asm]
       - [0x793A0, asm]

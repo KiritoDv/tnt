@@ -3,8 +3,8 @@ expected
 __pycache__
 .splat/
 tnt.ld
-tnt.uncompressed.ld
-tnt.*.*.yaml
+tnt.*.ld
+tnt.*.yaml
 tnt.us.modded.map
 ctx.c
 ctx.c.m2c
