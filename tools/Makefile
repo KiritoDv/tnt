@@ -9,7 +9,7 @@ else ifeq ($(UNAME_S),Linux)
 	DETECTED_OS := linux
 	LZO_FLAGS := --gc-sections
 else ifeq ($(UNAME_S),Darwin)
-	DETECTED_OS := macos	
+	DETECTED_OS := macos
 endif
 
 RECOMP_DIR := ido-recomp/$(DETECTED_OS)
