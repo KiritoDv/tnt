@@ -421,7 +421,7 @@ init:
 	@$(MAKE) uncompressed -j $(N_THREADS)
 	@$(MAKE) compressed
 
-TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \_\    \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n
+TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \_\    \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n\n
 uncompressed: $(ROM)
 ifneq ($(COMPARE),0)
 	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
