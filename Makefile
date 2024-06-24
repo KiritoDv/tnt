@@ -87,7 +87,7 @@ endif
 ifeq ($(COMPILER),gcc)
   OPTFLAGS := -Os
 else
-  OPTFLAGS := -O2 -g3
+  OPTFLAGS := -O2
 endif
 
 ifeq ($(COMPILER),gcc)
@@ -349,6 +349,9 @@ ifeq ($(COMPILER),ido)
 # build/src/libultra/libc/xprintf.o: OPTFLAGS := -O3 -g0
 # build/src/libultra/libc/ll.o: OPTFLAGS := -O1 -g0
 # build/src/libultra/libc/ll.o: MIPS_VERSION := -mips3 -32
+
+build/src/1D300.o: OPTFLAGS := -O1
+build/src/1D300.o: MIPS_VERSION := -mips1
 
 # cc & asm-processor
 CC := $(ASM_PROC) $(ASM_PROC_FLAGS) $(IDO) -- $(AS) $(ASFLAGS) --
