@@ -1,6 +1,16 @@
 #include "common.h"
 // nextpieces.c ?
-// compiler and flags not clear for this file.
+
+typedef struct {
+    u8 unk_0;
+    char pad_1[0x2918];
+    s8 unk_2919;
+} UnkStruct_8011FB80;
+
+void func_8006883C();
+
+extern UnkStruct_8011FB80* D_8011FB80;
+
 typedef struct {
     s16 unk0;
     s16 unk2;
@@ -39,13 +49,19 @@ void func_80068204(UnkStruct_80068204* arg0) {
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/2E320/func_8006883C.s")
 
-// https://decomp.me/scratch/ifmqA
-// Weird compiler?
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2E320/func_800688E0.s")
+void func_800688E0(void) {
+    register UnkStruct_8011FB80* temp = D_8011FB80;
+    
+    temp->unk_0 = 1;
+    temp->unk_2919 = 0x14;
+}
 
-// https://decomp.me/scratch/traIh
-// Weird compiler?
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2E320/func_80068904.s")
+void func_80068904(void) {
+    register UnkStruct_8011FB80* temp = D_8011FB80;
+    if ((*temp).unk_0 == 1) {
+        func_8006883C();
+    }
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/2E320/func_80068940.s")
 
