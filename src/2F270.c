@@ -1,4 +1,9 @@
 #include "common.h"
+// -01 -mips1
+
+void func_8008A5C8(s32*, s32*, s32);
+extern s32 D_800D3A90;
+extern s32 D_801235B0;
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/2F270/func_80068FF0.s")
 
@@ -8,7 +13,15 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/2F270/func_800692FC.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2F270/func_8006942C.s")
+void func_8006942C(u8* arg0, s32 arg1) {
+    arg0[4] = (u8) (arg0[4] - 1);
+    if (arg0[4] == 0) {
+        arg0[0] = 7;
+        func_8008A5C8(&D_801235B0, &D_800D3A90, 0x10);
+    }
+    arg0[3] = 1;
+    arg0[2] = 0;
+}
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/2F270/func_800694B0.s")
 
