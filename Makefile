@@ -354,6 +354,8 @@ build/src/1D300.o: OPTFLAGS := -O1
 build/src/1D300.o: MIPS_VERSION := -mips1
 build/src/2B990.o: OPTFLAGS := -O1
 build/src/2B990.o: MIPS_VERSION := -mips1
+build/src/2B990.o: OPTFLAGS := -O1
+build/src/2CBA0.o: MIPS_VERSION := -mips1
 
 # cc & asm-processor
 CC := $(ASM_PROC) $(ASM_PROC_FLAGS) $(IDO) -- $(AS) $(ASFLAGS) --
