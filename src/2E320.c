@@ -51,7 +51,7 @@ void func_80068204(UnkStruct_80068204* arg0) {
 
 void func_800688E0(void) {
     register UnkStruct_8011FB80* temp = D_8011FB80;
-    
+
     temp->unk_0 = 1;
     temp->unk_2919 = 0x14;
 }
