@@ -229,7 +229,7 @@ COMPTOOL_DIR	:= baserom
 MIO0			:= $(TOOLS)/mio0
 
 
-IINC := -Iinclude -Ibin/$(VERSION) -I.
+IINC := -Iinclude -Ibin/$(VERSION) -Iinclude/2.0I -I.
 IINC += -Ilib/ultralib/include -Ilib/ultralib/include/PR -Ilib/ultralib/include/ido
 
 ifeq ($(KEEP_MDEBUG),0)
@@ -433,6 +433,7 @@ init:
 #	@$(MAKE) compressed
 
 TNT :=  ______   __   __    ______  \n/\__  _\ /\ \-.\ \  /\__  _\ \n\/_/\ \/ \ \ \-.  \ \/_/\ \/ \n   \ \_\  \ \_\\ \__\   \ \_\ \n    \/_/   \/_/ \/_/    \/_/ \n\n
+
 finalrom: $(ROM)
 ifneq ($(COMPARE),0)
 #	@echo "$(GREEN)Calculating Rom Header Checksum... $(YELLOW)$<$(NO_COL)"
