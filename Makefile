@@ -351,16 +351,28 @@ ifeq ($(COMPILER),ido)
 # build/src/libultra/libc/ll.o: MIPS_VERSION := -mips3 -32
 
 build/src/1D300.o: OPTFLAGS := -O1
+
 build/src/1D300.o: MIPS_VERSION := -mips1
 build/src/2B990.o: OPTFLAGS := -O1
+
 build/src/2B990.o: MIPS_VERSION := -mips1
 build/src/2B990.o: OPTFLAGS := -O1
+
 build/src/2CBA0.o: MIPS_VERSION := -mips1
 build/src/2CBA0.o: OPTFLAGS := -O1
+
 build/src/2E320.o: MIPS_VERSION := -mips1
 build/src/2E320.o: OPTFLAGS := -O1
+
 build/src/2F270.o: MIPS_VERSION := -mips1
 build/src/2F270.o: OPTFLAGS := -O1
+
+build/src/2FAB0.o: MIPS_VERSION := -mips1
+build/src/2FAB0.o: OPTFLAGS := -O1
+
+build/src/73F0.o: MIPS_VERSION := -mips1
+build/src/73F0.o: OPTFLAGS := -O1
+
 
 # cc & asm-processor
 CC := $(ASM_PROC) $(ASM_PROC_FLAGS) $(IDO) -- $(AS) $(ASFLAGS) --
