@@ -5,6 +5,8 @@
 
 #define MEMBER_ACCESS(_struct, ptr, index, member) ((struct _struct*) ((char*) ptr + (index * 0x30)))->member
 
+extern struct UnkStruct_8011FB90* D_8011FB90;
+
 void func_80069830(struct UnkStruct_80069830* arg0) {
     register u32 var_s0;
     register int var_s1;
@@ -156,80 +158,68 @@ void func_80069E2C(struct UnkStruct_80069830* arg0) {
     arg0->unk0 = 2;
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_80069E84.s")
+void func_80069E84(void) {
+    register struct UnkStruct_8011FB90* var_a0;
+    register s32 var_a1;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_80069EC0.s")
+    var_a0 = D_8011FB90;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_80069F10.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_80069F68.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_80069FB8.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A050.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A3EC.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A410.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A47C.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A4EC.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A6BC.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A6F0.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A708.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A740.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A9A4.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A9BC.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006A9F4.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006AB84.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006ABA4.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006ABF4.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006AC2C.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006AD0C.s")
-
-void func_8006ADA4(void) {
-    register struct UnkStruct_8011FBA0* var_a0 = D_8011FBA0;
-    register struct UnkStruct_8011FBA0_array* var_a1;
-    register u32 var_a2;
-
-    var_a0->unk3 = 0;
-
-    var_a1 = var_a0->arr;
-
-    for (var_a2 = 0; var_a2 < 0x2C; var_a2++, var_a1++) {
-        var_a1->unk2 = var_a2;
-        var_a1->unk0 = 0;
+    for (var_a1 = 0; var_a1 < 0x14; var_a1++) {
+        var_a0->unk3[var_a1].unk0 = 1;
     }
 }
 
-void func_8006ADE4(void) {
+void func_80069EC0(void) {
+    register struct UnkStruct_8011FB90* var_a0 = D_8011FB90;
+    register s8* var_a1;
+    register s32 var_a2;
+
+    var_a1 = (s8*) &D_8011FB70->pad[0] + 0x15;
+
+    for (var_a2 = 4; var_a2 > 0; var_a2--, var_a1 += 2) {
+        D_8011FB90->unk3[var_a1[1]].unk0 = 1;
+    }
 }
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006ADEC.s")
+void func_80069F10(u8 arg0) {
+    if ((s32) arg0 >= 0x14) {
+        func_8004A5A0("lowestScanableLine invalid", "linescan.c", 297);
+    }
+    D_8011FB90->unk3F4 = arg0;
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006AE58.s")
+void func_80069F68(void) {
+    register struct UnkStruct_8011FB90* var_a0 = D_8011FB90;
+    register s32 var_a1;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006AEBC.s")
+    var_a0->unk3F4 = 0x13;
+    var_a0->unk3EC = 0;
+    var_a0->unk3F0 = 0;
+    var_a0->unk0 = 0;
+    var_a0->unk1 = 0;
+    for (var_a1 = 0; var_a1 < 0x14; var_a1++) {
+        var_a0->unk3[var_a1].unk0 = 0;
+    }
+}
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006AF00.s")
+void func_80069FB8(void) {
+    register struct UnkStruct_8011FB90* temp_s0;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006AF70.s")
+    temp_s0 = D_8011FB90;
+    temp_s0->unk1 = 0;
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006B050.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006B248.s")
-
-#pragma GLOBAL_ASM("asm/us/nonmatchings/2FAB0/func_8006B384.s")
+    do {
+        temp_s0->unk2 = 1;
+        switch (temp_s0->unk0) { /* irregular */
+            case 1:
+                func_80069E2C((struct UnkStruct_80069830*) temp_s0);
+                break;
+            case 2:
+                func_800698E0((struct UnkStruct_80069830*) temp_s0);
+                break;
+            case 3:
+                func_80069830((struct UnkStruct_80069830*) temp_s0);
+                break;
+        }
+    } while (temp_s0->unk2 == 0);
+}

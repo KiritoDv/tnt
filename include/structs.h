@@ -46,4 +46,20 @@ struct UnkStruct_8011FBD0 {
     s32 unk4[1]; // Unknown size
 };
 
+struct UnkStruct_8011FB90_1 {
+    s8 unk0;
+    s8 unk1[1];
+};
+
+struct UnkStruct_8011FB90 {
+    /* 0x000 */ char unk0;
+    /* 0x001 */ char unk1;
+    /* 0x002 */ char unk2;                            /* inferred */
+    /* 0x003 */ struct UnkStruct_8011FB90_1 unk3[1];
+    /* 0x005 */ char pad5[0x3E7];                   /* maybe part of unk3[0x1F4]? */
+    /* 0x3EC */ s32 unk3EC;
+    /* 0x3F0 */ s32 unk3F0;
+    /* 0x3F4 */ s8 unk3F4;
+    /* 0x3F5 */ char pad3F5[3];                     /* maybe part of unk3F4[4]? */
+}; 
 #endif /* STRUCTS_H */
