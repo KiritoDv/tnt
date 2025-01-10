@@ -367,6 +367,10 @@ build/src/2E320.o: OPTFLAGS := -O1
 build/src/2F270.o: MIPS_VERSION := -mips1
 build/src/2F270.o: OPTFLAGS := -O1
 
+build/src/linescan.o: MIPS_VERSION := -mips1
+build/src/linescan.o: OPTFLAGS := -O1
+
+
 build/src/2FAB0.o: MIPS_VERSION := -mips1
 build/src/2FAB0.o: OPTFLAGS := -O1
 

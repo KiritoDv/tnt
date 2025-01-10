@@ -15,6 +15,7 @@ options:
 
   symbol_addrs_path:
     - linker_scripts/us/symbol_addrs.txt
+    - linker_scripts/us/libultra_syms.txt
 
   asm_path: asm/us/
   src_path: src

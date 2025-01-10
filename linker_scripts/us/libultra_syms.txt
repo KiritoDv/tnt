@@ -1,0 +1,1 @@
+rmonPrintf = 0x800B3BFC;
