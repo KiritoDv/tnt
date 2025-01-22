@@ -316,4 +316,13 @@
   - type: bin
     start: 0xA8190
     follows_vram: main
+
+  - name: mcbain
+    type: bin
+    start: 0xB8FD20
+
+  - name: unknown
+    type: bin
+    start: 0xB9BD50
+
   - [0xC00000]

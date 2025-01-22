@@ -1,6 +1,20 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
+// 2F270.c
+struct UnkStruct_80068FF0 {
+    s8 unk0;
+    char unk1;
+    s8 unk2;
+    char unk3;
+    char unk4;
+    char unk5;
+    s32 unk8[1];
+    s32 padC[3];
+    s32 unk18[1];
+    s32 unk1C[1];
+};
+
 // 2FAB0.c
 struct UnkStruct_80069830_1 {
     char pad[0x3A0];
@@ -13,16 +27,19 @@ struct UnkStruct_80069830 {
     char unk0;
     char unk1;
     char unk2;
-    u8 pad[0x2C];
+    u8 pad2C[0x28];
+    struct UnkStruct_80068FF0* unk2C;
     union {
         struct UnkStruct_80069830_1 unk;
     };
 };
 
 struct UnkStruct_8011FB70 {
-    char pad[0x13];
-    u8 unk13;
-};
+    /* 0x00 */ u8 pad[1];                             /* inferred */
+    /* 0x01 */ char pad1[0x11];                     /* maybe part of unk0[0x12]? */
+    /* 0x12 */ s8 unk12;                            /* inferred */
+    /* 0x13 */ u8 unk13;
+};              
 
 struct UnkStruct_8011FBA0_array
 {
