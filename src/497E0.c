@@ -164,7 +164,7 @@
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/497E0/D_800DEDB0.s")
 
-#pragma GLOBAL_ASM("asm/us/nonmatchings/497E0/func_80083560.s")
+#pragma GLOBAL_ASM("asm/us/nonmatchings/497E0/Fault_Assert.s")
 
 #pragma GLOBAL_ASM("asm/us/nonmatchings/497E0/func_8008369C.s")
 

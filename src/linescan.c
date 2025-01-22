@@ -13,7 +13,7 @@ void func_80069830(struct UnkStruct_80069830* arg0) {
     register int var_s2;
 
     for (var_s0 = 0, var_s1 = TRUE; var_s0 < 0x14; var_s0++) {
-        var_s2 = func_8006952C(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s0, unk0) + 0x2C, 1);
+        var_s2 = func_8006952C(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s0, unk2C), 1);
         if (var_s2 != 1) {
             var_s1 = FALSE;
         }
@@ -50,7 +50,7 @@ void func_800698E0(struct UnkStruct_80069830* arg0) {
     }
 
     for (var_s1 = 0, var_s0 = &arg0->unk0 + 3; var_s1 < 0x14U; var_s1++, var_s0 += 2) {
-        func_80069668(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk0) + 0x2C);
+        func_80069668(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk2C));
 
         if (var_s0[1] != 0) {
             func_800529A8(D_8011EF10 + 0x14, 1);
@@ -67,13 +67,13 @@ void func_800698E0(struct UnkStruct_80069830* arg0) {
             }
 
             if (temp_s3 != 0) {
-                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk0) + 0x2C, var_s1, 3);
+                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk2C), var_s1, 3);
             } else if (temp_s2 != 0) {
-                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk0) + 0x2C, var_s1, 2);
+                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk2C), var_s1, 2);
             } else if (var_s4 != 0) {
-                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk0) + 0x2C, var_s1, 4);
+                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk2C), var_s1, 4);
             } else {
-                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk0) + 0x2C, var_s1, 1);
+                func_800696F4(&MEMBER_ACCESS(UnkStruct_80069830, arg0, var_s1, unk2C), var_s1, 1);
             }
         }
     }
