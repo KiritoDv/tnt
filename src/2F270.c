@@ -3,13 +3,22 @@
 #include "structs.h"
 #include "functions.h"
 
+struct UnkStruct_800692FC_1 {
+    char pad[0x48];
+    s16 unk48;
+    s16 unk4A;
+};
+
+struct UnkStruct_800692FC {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    struct UnkStruct_800692FC_1* unkC;
+};
+
 //.data
+extern s32 D_800D0020;
 extern s32 D_800D3A90;
-
-void func_8006D674(s32);         /* extern */
-s32 func_800A35EC(void*, void*); /* extern */
-u8 func_8006952C(struct UnkStruct_80068FF0* arg0, u8 arg1);
-
 extern s32 D_801235B0;
 
 void func_80068FF0(struct UnkStruct_80068FF0* arg0, s32 arg1) {
@@ -26,8 +35,6 @@ void func_80068FF0(struct UnkStruct_80068FF0* arg0, s32 arg1) {
         arg0->unk2 = 0;
     }
 }
-
-void func_8006E288(s32); /* extern */
 
 void func_800690E4(struct UnkStruct_80068FF0* arg0, s32 arg1) {
     register s32 i;
@@ -62,27 +69,6 @@ void func_80069160(struct UnkStruct_80068FF0* arg0, s32 arg1) {
     arg0->unk0 = 0;
     arg0->unk3 = 1;
 }
-
-void func_800692FC(struct UnkStruct_80068FF0* arg0, s32 arg1);
-
-//? func_8006D450(s32, s32);                          /* extern */
-//? func_8006D5BC(s32);                               /* extern */
-// func_80070860(void *, ? *, ?);                    /* extern */
-
-struct UnkStruct_800692FC_1 {
-    char pad[0x48];
-    s16 unk48;
-    s16 unk4A;
-};
-
-struct UnkStruct_800692FC {
-    s32 unk0;
-    s32 unk4;
-    s32 unk8;
-    struct UnkStruct_800692FC_1* unkC;
-};
-
-extern s32 D_800D0020;
 
 void func_800692FC(struct UnkStruct_80068FF0* arg0, s32 arg1) {
     register struct UnkStruct_800692FC* temp_s0;
@@ -128,8 +114,6 @@ void func_800694B0(struct UnkStruct_80068FF0* arg0, s32 arg1) {
     arg0->unk0 = 0;
     arg0->unk3 = 1;
 }
-
-void Fault_Asset(char*, char*, char*); /* extern */
 
 u8 func_8006952C(struct UnkStruct_80068FF0* arg0, u8 arg1) {
     do {

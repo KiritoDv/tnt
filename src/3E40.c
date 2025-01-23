@@ -3,6 +3,10 @@
 #include "structs.h"
 #include "functions.h"
 
+extern u8* D_800E1F20;
+
+s32 func_8007E03C(int);  /* extern */
+void func_8007E328(s32); /* extern */
 void func_800412E0(void*);
 void func_800413C0(u8, s8, u8, s32);
 s32 func_800416CC(u8, s8, u8);
@@ -97,9 +101,6 @@ s32 func_8003DDA8(u8 arg0, s8 arg1, u8 arg2) {
     return var_s2 & 0xFF;
 }
 
-s32 func_8007E03C(int); /* extern */
-extern u8* D_800E1F20;
-
 void func_8003DFA0(void) {
     register u8 var_s0;
 
@@ -109,8 +110,6 @@ void func_8003DFA0(void) {
         D_800E1F20[var_s0] = 0;
     }
 }
-
-void func_8007E328(s32); /* extern */
 
 void func_8003E004(void) {
     if (D_800E1F20 != 0) {
